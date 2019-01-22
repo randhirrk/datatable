@@ -1,0 +1,46 @@
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<div class="">
+	<table id="example" class="display" width="100%" cellspacing="0">
+		<thead>
+		    <tr>
+		        <th>Empid</th>
+		        <th>First Name</th>
+		        <th>Last Name</th>
+				<th>Joining Date</th>
+		    </tr>
+		</thead>
+
+		<tfoot>
+		    <tr>
+		       <th>Empid</th>
+		        <th>First Name</th>
+		        <th>Last Name</th>
+				<th>Joining Date</th>
+		    </tr>
+		</tfoot>
+	</table>
+</div>
+
+<script type="text/javascript">	
+$( document ).ready(function() {
+	$('#example').dataTable({
+		"processing": true,
+        "serverSide": true,
+		"sAjaxSource": "response.php",
+		"columns": [
+            { "data": "emp_no" },
+            { "data": "first_name" },
+            { "data": "last_name" },
+            { "data": "hire_date" }
+        ]
+    });   
+});
+</script>
